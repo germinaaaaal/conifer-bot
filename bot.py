@@ -210,11 +210,6 @@ async def коммунист(ctx):
 
 
 general_channel_id = 421880721523605506
-@bot.event
-async def on_member_remove(member):
-    general = bot.get_channel(general_channel_id)
-    msg = "Bye, **{0.name}#{0.discriminator}**! It was nice to have you here!".format(member)
-    await general.send(msg)
 
 @bot.event
 async def on_member_join(member):
