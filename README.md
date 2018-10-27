@@ -7,6 +7,7 @@ A kitchen-sink bot that does various things, useful and otherwise, for [Conifer]
 - Quote any person by scanning their pinned messsages
 - Quotes vyutsk whenever somebody says "no"
 - State-of-the-art apabeossie simulator
+- Mr Bean on error
 - COMMUNISM
 - and much more besides
 
