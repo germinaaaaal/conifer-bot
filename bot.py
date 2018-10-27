@@ -208,6 +208,20 @@ async def коммунист(ctx):
 Пусть от победы к победе ведёт!**
 """)
 
+
+general_channel_id = 421880721523605506
+@bot.event
+async def on_member_remove(member):
+    general = client.get_channel(general_channel_id)
+    msg = "Bye, **{0.name}#{0.discriminator}**! It was nice to have you here!".format(member)
+    await general.send(msg)
+
+@bot.event
+async def on_member_join(member):
+    general = client.get_channel(general_channel_id)
+    msg = "Hello and welcome to Conifer's Discord server, **{0.mention}**! Please state your nation name and the region in which you reside, and then make yourself at home here!".format(member)
+    await general.send(msg)
+
 @bot.event
 async def on_message(msg):
     if msg.content.lower() == "good bot":
