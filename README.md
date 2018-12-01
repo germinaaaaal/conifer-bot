@@ -26,3 +26,9 @@ Use at your own risk...
 
 # License
 AGPL-3; see LICENSE file for details
+
+# Also included: keith the dice bot
+Set the `DICEBOT_TOKEN` envvar to your bot token, then run `keith.py`.
+## Features
+Responds to any message he can see that contains a request for a D&D-style dice roll. For instance if
+a message contains "2d20" then keith will roll two d20s and add them together for you.
