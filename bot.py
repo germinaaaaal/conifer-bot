@@ -217,8 +217,13 @@ async def on_member_join(member):
     msg = "Hello and welcome to Conifer's Discord server, **{0.mention}**! Please state your nation name and the region in which you reside, and then make yourself at home here!".format(member)
     await general.send(msg)
 
+import re
+only_dots = re.compile(r"^\.+$")
+
 @bot.event
 async def on_message(msg):
+    if only_dots.search(msg.content.split(" ")[0]):
+        return
     if msg.content.lower() == "good bot":
         await msg.channel.send("Thanks!")
     elif msg.content.lower() == "bad bot":
