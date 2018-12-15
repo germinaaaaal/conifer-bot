@@ -219,11 +219,17 @@ async def on_member_join(member):
 
 import re
 only_dots = re.compile(r"^\.+$")
+subreddit = re.compile(r"r/(\w+)")
 
 @bot.event
 async def on_message(msg):
+    if msg.author == bot.user:
+        return
     if only_dots.search(msg.content.split(" ")[0]):
         return
+    subreddits = subreddit.findall(msg.content)
+    if subreddits:
+        await msg.channel.send("\n".join("https://reddit.com/r/{}".format(sr) for sr in subreddits))
     if msg.content.lower() == "good bot":
         await msg.channel.send("Thanks!")
     elif msg.content.lower() == "bad bot":
