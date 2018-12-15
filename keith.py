@@ -20,9 +20,12 @@ async def on_message(msg):
             full, count, sides = match
             count = 1 if count == '' else int(count)
             sides = int(sides)
-            result = 0
-            for i in range(count):
-                result += random.randint(1, sides)
+            if count > 9999 or sides > 9999:
+                result = "*one or more numbers are too large for me :(*"
+            else:
+                result = 0
+                for i in range(count):
+                    result += random.randint(1, sides)
             resp.append( "`{}`: **{}**".format(full, result) )
             
         await msg.channel.send("\n".join(resp))
