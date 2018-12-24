@@ -219,7 +219,7 @@ async def on_member_join(member):
 
 import re
 only_dots = re.compile(r"^\.+$")
-subreddit = re.compile(r"r/(\w+)")
+subreddit = re.compile(r"\br/(\w+)")
 
 @bot.event
 async def on_message(msg):
