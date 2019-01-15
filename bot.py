@@ -30,7 +30,6 @@ from collections import deque
 import lxml
 from bs4 import BeautifulSoup
 
-INSTA = requests.get("https://i.imgur.com/JYM4cuY.png").content
 
 @bot.event
 async def on_ready():
@@ -234,8 +233,6 @@ async def on_message(msg):
         await msg.channel.send("Thanks!")
     elif msg.content.lower() == "bad bot":
         await msg.channel.send("shut")
-    elif msg.content.lower() == "no":
-        await msg.channel.send(file=discord.File(io.BytesIO(INSTA), "no.png"))
     elif msg.content.lower().startswith("*cries in "):
         await msg.channel.send("*laughs in binary*")
     elif msg.content.lower() == "yee":
