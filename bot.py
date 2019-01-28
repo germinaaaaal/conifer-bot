@@ -220,6 +220,14 @@ import re
 only_dots = re.compile(r"^\.+$")
 subreddit = re.compile(r"\br/(\w+)")
 
+F="""🇫 🇫 🇫 🇫
+🇫
+🇫
+🇫 🇫 🇫 🇫
+🇫
+🇫
+🇫"""
+
 @bot.event
 async def on_message(msg):
     if msg.author == bot.user:
@@ -233,6 +241,8 @@ async def on_message(msg):
         await msg.channel.send("Thanks!")
     elif msg.content.lower() == "bad bot":
         await msg.channel.send("shut")
+    elif msg.content.lower() == "f":
+        await msg.channel.send(F)
     elif msg.content.lower().startswith("*cries in "):
         await msg.channel.send("*laughs in binary*")
     elif msg.content.lower() == "yee":
