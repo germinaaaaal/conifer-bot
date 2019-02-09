@@ -220,7 +220,7 @@ import re
 only_dots = re.compile(r"^\.+$")
 subreddit = re.compile(r"\br/(\w+)")
 
-F=""".
+F="""
 🇫 🇫 🇫 🇫
 🇫
 🇫
