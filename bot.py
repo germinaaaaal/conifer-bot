@@ -219,6 +219,7 @@ async def on_member_join(member):
 import re
 only_dots = re.compile(r"^\.+$")
 subreddit = re.compile(r"\br/(\w+)")
+wiki = re.compile(r"\bwiki/(\w+)")
 
 F="""
 🇫 🇫 🇫 🇫
@@ -238,6 +239,9 @@ async def on_message(msg):
     subreddits = subreddit.findall(msg.content)
     if subreddits:
         await msg.channel.send("\n".join("https://reddit.com/r/{}".format(sr) for sr in subreddits))
+    wiki = wiki.findall(msg.content)
+    if wiki:
+        await msc.channel.send("\n".join("https://coniferregion.xyz/wiki/{}".format(art) for art in wiki))
     if msg.content.lower() == "good bot":
         await msg.channel.send("Thanks!")
     elif msg.content.lower() == "bad bot":
