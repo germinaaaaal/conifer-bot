@@ -43,6 +43,18 @@ async def ping(ctx):
     """
     logger.info("pinged by {}".format(ctx.author))
     await ctx.send("pong")
+    
+@bot.command()
+async def wiki(ctx, wikipage: str):
+    """Sends back a link to a Conifer wiki page
+    
+    Sends a link to the mentioned Conifer Wiki page.
+    """
+    logger.info("{} requested wiki page {}".format(ctx.author, wikipage))
+    page = discord.Embed(title="Conifer Wiki")
+    page.colour = 0x6aff55
+    page.add_field(name=wikipage, value=("https://coniferregion.xyz/wiki/" + wikipage.replace(" ", "_"))
+    await ctx.send(embed=page)
 
 @bot.command()
 async def links(ctx):
