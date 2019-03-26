@@ -260,8 +260,6 @@ async def on_message(msg):
         await msg.channel.send("*laughs in binary*")
     elif msg.content.lower() == "yee":
         await msg.channel.send("https://www.youtube.com/watch?v=q6EoRBvdVPQ")
-    elif msg.content.lower().startswith("wiki/"):
-        await msg.channel.send("\n".join("https://coniferregion.xyz/{}".format(msg.split(" ")[0])
     await bot.process_commands(msg)
 
 @bot.event
