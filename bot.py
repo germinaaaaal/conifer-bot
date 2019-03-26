@@ -45,7 +45,7 @@ async def ping(ctx):
     await ctx.send("pong")
     
 @bot.command()
-async def wiki(ctx, wikipage: str):
+async def wiki(ctx, *, wikipage: str):
     """Sends back a link to a Conifer wiki page
     
     Sends a link to the mentioned Conifer Wiki page.
